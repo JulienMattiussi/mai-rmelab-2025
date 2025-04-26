@@ -48,6 +48,8 @@ import CountDown from "~/components/CountDown.vue";
     margin: -10px;
     height: calc(100% + 20px);
     width: unset;
+    width: 113vw;
+    height: 110vh;
   }
 }
 

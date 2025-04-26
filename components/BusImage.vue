@@ -131,7 +131,14 @@ changingAvatar();
   border-color: transparent transparent white transparent;
   position: absolute;
   left: 125px;
-  top: 97px;
+  top: 100px;
+}
+
+@media (max-width: 1250px) {
+  .people::before {
+    left: 50px;
+    top: 50px;
+  }
 }
 
 .avatar {

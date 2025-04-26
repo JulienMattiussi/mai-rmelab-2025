@@ -166,6 +166,12 @@ img.road {
 }
 
 @media (max-width: 1250px) {
+  .bus {
+    left: 50px;
+  }
+}
+
+@media (max-width: 1250px) {
   img.road {
     margin-left: -10px;
     width: calc(100% + 20px);
