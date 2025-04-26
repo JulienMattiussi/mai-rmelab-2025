@@ -27,7 +27,7 @@ const avatars = [
   { image: "jonathan.png", message: "Youpi" },
   { image: "julio.jpg", message: "Quelqu'un a de quoi manger ?" },
   { image: "karen.jpg", message: "J'ai trop trop trop hâte <3 !!" },
-  { image: "julienmaire.jpg", message: "Je suis même pas là en vrai ..." },
+  { image: "julienmaire.png", message: "zzzzzz" },
   { image: "thibault.png", message: "Y aura qui ?" },
   { image: "matthieu.png", message: "Mais qu'est-ce-que je fait là" },
 ];
@@ -66,6 +66,13 @@ changingAvatar();
   margin-top: 0px;
   height: 100px;
   width: 200px;
+}
+
+@media (max-width: 1250px) {
+  .bus {
+    margin-top: 50px;
+    width: 100px;
+  }
 }
 
 .bus > img {
@@ -107,7 +114,7 @@ changingAvatar();
   padding: 10px;
   font-weight: bold;
   width: 240px;
-  margin-left: -50px;
+  margin-left: 0px;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -123,7 +130,7 @@ changingAvatar();
   border-width: 0px 10px 15px 10px;
   border-color: transparent transparent white transparent;
   position: absolute;
-  left: 45px;
+  left: 125px;
   top: 97px;
 }
 
