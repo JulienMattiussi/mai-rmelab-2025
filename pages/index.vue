@@ -5,9 +5,9 @@ import CountDown from "~/components/CountDown.vue";
 
 <template>
   <div>
-    <img class="back" alt="Dijon" src="/assets/back.jpeg" />
+    <NuxtImg class="back" alt="Background" src="/assets/back.png" />
     <div class="content">
-      <img alt="Marmelab logo" class="logo" src="/assets/logo-green.png" />
+      <NuxtImg alt="Marmelab logo" class="logo" src="/assets/logo-green.png" />
       <MainTitle message="Forbach, nous voici !!!" class="title" />
       <CountDown
         start="2025-04-28T09:00:00.000Z"
@@ -41,6 +41,8 @@ import CountDown from "~/components/CountDown.vue";
   top: 0;
   left: 0;
   filter: contrast(40%) blur(5px) brightness(1.5);
+  width: calc(100vw - 60px);
+  height: calc(100vh - 60px);
 }
 
 @media (max-width: 1250px) {
