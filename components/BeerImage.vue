@@ -4,6 +4,13 @@ type Props = {
 };
 
 const { currentBeer = 0 } = defineProps<Props>();
+const dryBeer = useState("dryBeer", () => true);
+
+defineShortcuts({
+  b: () => {
+    dryBeer.value = !dryBeer.value;
+  },
+});
 
 const chooseBeerImage = (index: number) => {
   if (index === currentBeer + 1) {
@@ -24,14 +31,19 @@ const chooseBeerImage = (index: number) => {
 
 <template>
   <div class="img-container">
-    <NuxtImg
-      v-for="index in 9"
-      :key="index"
-      class="beer"
-      :alt="currentBeer.toString()"
-      :src="chooseBeerImage(index)"
-      preload
-    />
+    <div v-for="index in 9" :key="index">
+      <NuxtImg
+        class="beer"
+        :alt="currentBeer.toString()"
+        :src="chooseBeerImage(index)"
+        preload
+      />
+      <span
+        :style="`visibility: ${dryBeer ? 'visible' : 'hidden'};`"
+        class="dry-beer"
+        >0%</span
+      >
+    </div>
   </div>
 </template>
 
@@ -45,9 +57,25 @@ img.beer {
   width: 60px;
 }
 
+span.dry-beer {
+  font-weight: bold;
+  color: red;
+  position: relative;
+  left: 17px;
+  bottom: 35px;
+}
+
 @media (max-width: 1250px) {
   img.beer {
     width: 40px;
+  }
+}
+
+@media (max-width: 1250px) {
+  span.dry-beer {
+    font-size: x-small;
+    left: 11px;
+    bottom: 28px;
   }
 }
 </style>
