@@ -24,12 +24,13 @@ const chooseBeerImage = (index: number) => {
 
 <template>
   <div class="img-container">
-    <img
+    <NuxtImg
       v-for="index in 9"
       :key="index"
       class="beer"
       :alt="currentBeer.toString()"
       :src="chooseBeerImage(index)"
+      preload
     />
   </div>
 </template>

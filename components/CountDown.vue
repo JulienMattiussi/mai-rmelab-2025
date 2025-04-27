@@ -54,7 +54,7 @@ countdown();
 <template>
   <div class="main">
     <div class="countdown">
-      <BeerImage :currentBeer="currentBeer" />
+      <BeerImage :current-beer="currentBeer" />
       <h3 style="margin-left: 10px">Temps restant avant la fiesta :</h3>
       <table>
         <tbody>
@@ -99,9 +99,9 @@ countdown();
           </tr>
           <tr>
             <td class="road-td" colspan="6">
-              <BusImage :currentPosition="currentPosition" class="bus" />
-              <img class="road" alt="Road" src="/assets/road.jpg" />
-              <img class="goal" alt="Goal" src="/assets/goal.png" />
+              <BusImage :current-position="currentPosition" class="bus" />
+              <NuxtImg class="road" alt="Road" src="/assets/road.jpg" />
+              <NuxtImg class="goal" alt="Goal" src="/assets/goal.png" />
             </td>
           </tr>
         </tbody>

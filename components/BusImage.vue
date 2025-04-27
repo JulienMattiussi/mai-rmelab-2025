@@ -9,10 +9,7 @@ const avatars = [
   { image: "adrieng.png", message: "Metz ça aurait été mieux." },
   { image: "alexandra.png", message: "On peut y aller en stop ?" },
   { image: "anthony.png", message: "Je veux aller faire pipi !!" },
-  {
-    image: "antoine.png",
-    message: "Vous êtes sûrs que j'ai le droit de venir ?",
-  },
+  { image: "antoine.png", message: "Quelqu'un a vu mon renard ?" },
   { image: "arnaud.png", message: "Y a Antoine qui m'embête." },
   { image: "benoit.png", message: "Vous êtes sûr qu'on va dans le bon sens ?" },
   { image: "caroline.png", message: "zu Hilfe !!" },
@@ -22,7 +19,7 @@ const avatars = [
   { image: "gildas.jpg", message: "J'ai des crampes." },
   { image: "guillaume.png", message: "C'est trop long." },
   { image: "guiom.png", message: "Vimenquonrive" },
-  { image: "jeremie.jpg", message: "Je suis même pas là en vrai ..." },
+  { image: "jeremie.jpg", message: "Pour une fois que je viens ..." },
   { image: "jibe.png", message: "On va où ?" },
   { image: "jonathan.png", message: "Youpi" },
   { image: "julio.jpg", message: "Quelqu'un a de quoi manger ?" },
@@ -32,18 +29,10 @@ const avatars = [
   { image: "matthieu.png", message: "Mais qu'est-ce-que je fait là" },
 ];
 
-const getRandomInt = (max: number) => {
-  return Math.floor(Math.random() * max);
-};
-
-const choice = ref(getRandomInt(avatars.length));
-const avatar = ref(avatars[choice.value].image);
-const message = ref(avatars[choice.value].message);
+const choice = ref(0);
 
 const changingAvatar = () => {
-  choice.value = getRandomInt(avatars.length);
-  avatar.value = avatars[choice.value].image;
-  message.value = avatars[choice.value].message;
+  choice.value = choice.value >= avatars.length - 1 ? 0 : choice.value + 1;
   setTimeout(changingAvatar, 3000);
 };
 
@@ -52,10 +41,20 @@ changingAvatar();
 
 <template>
   <div class="bus" :style="`margin-left: calc(${currentPosition}% - 100px);`">
-    <img alt="Bus" src="/assets/bus.png" />
-    <div class="people">
-      <img class="avatar" :alt="avatar" :src="`/avatars/${avatar}`" />
-      <span>{{ message }}</span>
+    <NuxtImg alt="Bus" src="/assets/bus.png" />
+    <div
+      v-for="index in avatars.length"
+      :key="index"
+      class="people"
+      :style="`display: ${index - 1 === choice ? 'flex' : 'none'};`"
+    >
+      <NuxtImg
+        class="avatar"
+        :alt="avatars[index - 1].image"
+        :src="`/avatars/${avatars[index - 1].image}`"
+        preload
+      />
+      <span>{{ avatars[index - 1].message }}</span>
     </div>
   </div>
 </template>
