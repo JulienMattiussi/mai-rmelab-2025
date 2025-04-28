@@ -11,7 +11,7 @@ import CountDown from "~/components/CountDown.vue";
       <MainTitle message="Forbach, nous voici !!!" class="title" />
       <CountDown
         start="2025-04-28T09:00:00.000Z"
-        deadline="2025-05-21T15:20:00.000Z"
+        deadline="2025-05-21T17:00:00.000Z"
       />
     </div>
     <!-- <nuxt-link to="/about">Go to About Page</nuxt-link> -->
