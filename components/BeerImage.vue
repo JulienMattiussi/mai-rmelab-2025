@@ -41,7 +41,7 @@ const chooseBeerImage = (index: number) => {
       <span
         :style="`visibility: ${dryBeer ? 'visible' : 'hidden'};`"
         class="dry-beer"
-        >0%</span
+        >0°</span
       >
     </div>
   </div>
@@ -61,8 +61,8 @@ span.dry-beer {
   font-weight: bold;
   color: red;
   position: relative;
-  left: 17px;
-  bottom: 35px;
+  left: -39px;
+  bottom: 17px;
 }
 
 @media (max-width: 1250px) {
@@ -74,7 +74,7 @@ span.dry-beer {
 @media (max-width: 1250px) {
   span.dry-beer {
     font-size: x-small;
-    left: 11px;
+    left: 13px;
     bottom: 28px;
   }
 }
