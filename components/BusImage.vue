@@ -61,6 +61,7 @@ changingAvatar();
 
 <style scoped>
 .bus {
+  z-index: 100;
   position: absolute;
   margin-top: 0px;
   height: 100px;
