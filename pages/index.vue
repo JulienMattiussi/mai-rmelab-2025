@@ -8,7 +8,7 @@ import CountDown from "~/components/CountDown.vue";
     <NuxtImg class="back" alt="Background" src="/assets/back.png" />
     <div class="content">
       <NuxtImg alt="Marmelab logo" class="logo" src="/assets/logo-green.png" />
-      <MainTitle message="Forbach, nous voici !!!" class="title" />
+      <MainTitle message="Belmont, nous voici !!!" class="title" />
       <CountDown
         start="2025-04-28T09:00:00.000Z"
         deadline="2025-05-21T15:00:00.000Z"
